@@ -10,7 +10,7 @@ export function footer({ t }: Ctx): string {
   return `<footer class="foot">
     <div class="wrap foot-inner">
       <span class="wordmark wordmark-lg">MENYANYO <span class="studio">GAMES</span></span>
-      <div class="foot-links"><a class="foot-link ghost" href="${esc(STUDIO.github)}" target="_blank" rel="noopener noreferrer">${icon.code}GitHub</a><a class="foot-link ghost" href="${esc(STUDIO.linkedin)}" target="_blank" rel="noopener noreferrer">${icon.linkedin}LinkedIn</a>${mail}</div>
+      <div class="foot-links"><a class="foot-link foot-coffee btn-press" href="${esc(STUDIO.coffee)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(t.coffeeAria)}">${icon.coffee}${esc(t.coffee)}</a><a class="foot-link ghost" href="${esc(STUDIO.github)}" target="_blank" rel="noopener noreferrer">${icon.code}GitHub</a><a class="foot-link ghost" href="${esc(STUDIO.linkedin)}" target="_blank" rel="noopener noreferrer">${icon.linkedin}LinkedIn</a>${mail}</div>
       <div class="foot-row"><span class="foot-copy">© 2026 Menyanyo Games</span><a class="nav-link foot-top" href="#top">↑ ${esc(t.top)}</a></div>
     </div>
   </footer>`;

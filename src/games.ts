@@ -132,5 +132,6 @@ export const GAMES: Game[] = [
 export const STUDIO = {
   github: 'https://github.com/mbernardo95',
   linkedin: 'https://www.linkedin.com/in/marc-bernardo-838757174/',
+  coffee: 'https://buymeacoffee.com/menyanyo',
   email: null as string | null
 };

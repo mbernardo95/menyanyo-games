@@ -15,5 +15,6 @@ export const icon = {
   close: s(20, '<path d="M18 6L6 18M6 6l12 12"></path>', ''),
   linkedin: s(18, '<rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"></path>'),
   code: s(18, '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"></path>'),
+  coffee: s(18, '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"></path>'),
   mail: s(18, '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path>')
 };

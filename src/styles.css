@@ -323,6 +323,7 @@ a { color: inherit; }
   border-radius: 12px; border: 1px solid var(--line-2); color: var(--text); text-decoration: none;
   font-weight: 600; font-size: 15px;
 }
+.foot-coffee { background: var(--studio); border-color: var(--studio); color: var(--surface); }
 .foot-row {
   display: flex; align-items: center; gap: 20px; width: 100%; justify-content: space-between; flex-wrap: wrap;
   border-top: 1px solid var(--line); padding-top: 20px;
