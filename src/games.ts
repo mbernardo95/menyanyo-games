@@ -128,5 +128,6 @@ export const GAMES: Game[] = [
 /** Footer links. A null e-mail hides the mail link. */
 export const STUDIO = {
   github: 'https://github.com/mbernardo95',
+  linkedin: 'https://www.linkedin.com/in/marc-bernardo-838757174/',
   email: null as string | null
 };
