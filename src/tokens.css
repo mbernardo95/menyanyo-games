@@ -1,0 +1,73 @@
+/* Menyanyo Games design tokens. */
+:root, [data-theme="dark"] {
+  --bg: #0A0910; --surface: #13111C; --surface-2: #1B1827;
+  --line: rgba(255,255,255,.09); --line-2: rgba(255,255,255,.18);
+  --text: #F2F0F7; --muted: #A9A4B8;
+  --studio: #2CF6FF; --studio-soft: rgba(44,246,255,.12);
+  --bar: rgba(10,9,16,.78);
+  --glow-a-mix: 22%; --glow-b-mix: 14%;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --bg: #F3F2F7; --surface: #FFFFFF; --surface-2: #ECEAF2;
+  --line: rgba(20,18,28,.10); --line-2: rgba(20,18,28,.20);
+  --text: #14121C; --muted: #4F4A5E;
+  --studio: #00707A; --studio-soft: rgba(0,112,122,.10);
+  --bar: rgba(243,242,247,.84);
+  --glow-a-mix: 16%; --glow-b-mix: 10%;
+  color-scheme: light;
+}
+
+:root {
+  /* Game accents. The game in focus is copied into --ga/--gb/--gink on <html> at runtime. */
+  --g-corrillo-a: #FF3DA8; --g-corrillo-b: #FF7A2E; --g-corrillo-ink: #C2186F;
+  --g-zvh-a: #7CFF4F; --g-zvh-b: #FF3B3B; --g-zvh-ink: #2E7D17;
+  --g-pillapilla-a: #3D9BFF; --g-pillapilla-b: #A66BFF; --g-pillapilla-ink: #1F5FD1;
+  --g-geomites-a: #FFB547; --g-geomites-b: #2EE6C5; --g-geomites-ink: #9A5800;
+  --g-supermanager-a: #FFD23F; --g-supermanager-b: #2FBF71; --g-supermanager-ink: #7D6000;
+  --ga: var(--g-corrillo-a); --gb: var(--g-corrillo-b); --gink: var(--g-corrillo-ink);
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 56px; --space-8: 112px;
+  --radius-xs: 6px; --radius-sm: 10px; --radius-md: 14px;
+  --radius-lg: 18px; --radius-xl: 24px; --radius-pill: 999px;
+
+  --font-display: "Big Shoulders Display", Impact, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --fs-display-xl: 128px; --fs-display-l: 76px; --fs-display-m: 38px;
+  --fs-body-l: 21px; --fs-body: 16px; --fs-hud: 12px;
+
+  --dur-fast: 160ms; --dur-base: 240ms; --dur-slow: 700ms; --dur-drift: 9s;
+  --carousel-interval: 7s;
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+
+  --hero-ink: #F5F3FA; --hero-bg: #07060C; --on-hero-accent: #0A0910;
+  --live: #5CFF8A; --dev: #FFC24D;
+}
+
+/* The accent family. Declared on every scope that sets its own --ga/--gb/--gink
+   (the page root, each card, each diagram tile, the overlay), so it resolves per game. */
+:root, .g-scope {
+  --accent: var(--ga);
+  --accent-2: var(--gb);
+  --accent-text: var(--ga);
+  --accent-btn: var(--ga);
+  --on-accent: #0A0910;
+  --accent-glow: color-mix(in srgb, var(--ga) 50%, transparent);
+  --glow-soft: color-mix(in srgb, var(--ga) var(--glow-a-mix), transparent);
+  --glow2-soft: color-mix(in srgb, var(--gb) var(--glow-b-mix), transparent);
+  --focus: var(--accent-text);
+  --focus-glow: color-mix(in srgb, var(--ga) 22%, transparent);
+  --glow-card: 0 28px 70px -24px var(--accent-glow);
+  --ring-focus: 0 0 0 3px var(--focus), 0 0 0 9px var(--focus-glow);
+}
+[data-theme="light"], [data-theme="light"] .g-scope {
+  --accent-text: var(--gink);
+  --accent-btn: var(--gink);
+  --on-accent: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; --dur-drift: 0ms; }
+}
