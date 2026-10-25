@@ -72,8 +72,8 @@ export const GAMES: Game[] = [
     alt: { es: 'Tres móviles sobre una mesa de fiesta con palomitas, pizza y luces, mostrando la carta secreta de "Hombre lobo", la votación con avatares y el sello "¡Vendido!" de Team Builder, con un brillo magenta y naranja.', en: 'Three phones lying on a late-night party table with popcorn, pizza and fairy lights, showing the secret "Hombre lobo" role card, the avatar vote grid and Team Builder\'s "¡Vendido!" stamp, lit in magenta and orange.' }
   },
   {
-    id: 'supermanager', title: 'SuperManager', status: 'dev', action: 'soon',
-    url: null, urlLabel: null,
+    id: 'supermanager', title: 'SuperManager', status: 'live', action: 'play',
+    url: 'https://supermanager-dda56a05caff.herokuapp.com/', urlLabel: 'supermanager.herokuapp.com',
     featured: false,
     tags: ['strategy', 'multiplayer', 'web'],
     colors: { a: '#FFD23F', b: '#2FBF71', ink: '#7D6000' },
