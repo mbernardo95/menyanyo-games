@@ -2,15 +2,15 @@
 import type { Lang, Tag } from './games';
 
 const es = {
-  h1: 'Menyanyo Games', skip: 'Saltar a los juegos', homeAria: 'Menyanyo Games, inicio',
+  h1: 'Menyanyo Games', docTitle: 'Menyanyo Games · Juegos gratis para jugar con amigos', skip: 'Saltar a los juegos', homeAria: 'Menyanyo Games, inicio',
   langAria: 'Idioma', toLight: 'Cambiar a tema claro', toDark: 'Cambiar a tema oscuro',
-  featured: 'Destacado', play: 'Jugar', download: 'Descargar', soon: 'Próximamente', details: 'Ver más',
+  featured: 'Destacado', play: 'Jugar', download: 'Descargar para Android', soon: 'Próximamente', details: 'Ver más',
   prev: 'Juego anterior', next: 'Juego siguiente', goTo: 'Ir a', of: 'de',
   libTitle: 'Juegos',
   count: (n: number) => `${n} juegos`,
   filterAria: 'Filtrar juegos', empty: 'Ningún juego con este filtro.',
   filters: { all: 'Todos', party: 'Fiesta', strategy: 'Estrategia', multiplayer: 'Multijugador', mobile: 'Móvil', web: 'Web' } as Record<'all' | Tag, string>,
-  kPlayers: 'Jugadores', kPlatform: 'Plataforma', kStatus: 'Estado', live: 'Disponible', dev: 'En desarrollo',
+  kPlayers: 'Jugadores', kPlatform: 'Plataforma', kStatus: 'Estado', kPrice: 'Precio', free: 'Gratis', live: 'Ya disponible', dev: 'En desarrollo',
   top: 'Volver arriba',
   back: 'Volver', closeAria: 'Cerrar (Esc)', gallery: 'Galería', trailer: 'Tráiler', shot: 'Captura', placeholder: 'Provisional',
   detailsAria: (x: string) => `Ver más sobre ${x}`, playAria: (x: string) => `Jugar a ${x} (se abre en una pestaña nueva)`,
@@ -20,15 +20,15 @@ const es = {
 export type Copy = typeof es;
 
 const en: Copy = {
-  h1: 'Menyanyo Games', skip: 'Skip to the games', homeAria: 'Menyanyo Games, home',
+  h1: 'Menyanyo Games', docTitle: 'Menyanyo Games · Free games to play with friends', skip: 'Skip to the games', homeAria: 'Menyanyo Games, home',
   langAria: 'Language', toLight: 'Switch to light theme', toDark: 'Switch to dark theme',
-  featured: 'Featured', play: 'Play', download: 'Download', soon: 'Coming soon', details: 'See more',
+  featured: 'Featured', play: 'Play', download: 'Download for Android', soon: 'Coming soon', details: 'More info',
   prev: 'Previous game', next: 'Next game', goTo: 'Go to', of: 'of',
   libTitle: 'Games',
   count: (n) => `${n} games`,
   filterAria: 'Filter games', empty: 'No games with this filter.',
   filters: { all: 'All', party: 'Party', strategy: 'Strategy', multiplayer: 'Multiplayer', mobile: 'Mobile', web: 'Web' },
-  kPlayers: 'Players', kPlatform: 'Platform', kStatus: 'Status', live: 'Live', dev: 'In development',
+  kPlayers: 'Players', kPlatform: 'Platform', kStatus: 'Status', kPrice: 'Price', free: 'Free', live: 'Out now', dev: 'In development',
   top: 'Back to top',
   back: 'Back', closeAria: 'Close (Esc)', gallery: 'Gallery', trailer: 'Trailer', shot: 'Shot', placeholder: 'Placeholder',
   detailsAria: (x) => `See more about ${x}`, playAria: (x) => `Play ${x} (opens in a new tab)`,

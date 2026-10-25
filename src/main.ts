@@ -68,7 +68,7 @@ function renderAll(): void {
   const c = ctx();
   document.documentElement.lang = state.lang;
   document.documentElement.dataset.theme = state.theme;
-  document.title = c.t.h1;
+  document.title = c.t.docTitle;
   keepFocus(() => {
     app.innerHTML = `<a class="skip" href="#games">${c.t.skip}</a>
       <h1 class="sr-only">${c.t.h1}</h1>

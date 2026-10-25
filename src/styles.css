@@ -391,6 +391,9 @@ a { color: inherit; }
   .only-desk { display: none; }
   .only-mob { display: inline; }
   .bar-inner { padding-block: 10px; gap: 12px; }
+  .logo .wordmark { font-size: 18px; }
+  .bar-tools { gap: 8px; }
+  .btn-lg { font-size: 21px; padding: 0 20px 0 18px; }
 
   .hero-sec { padding-top: 12px; }
   .hero { aspect-ratio: 9 / 16; min-height: 0; }

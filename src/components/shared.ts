@@ -13,7 +13,8 @@ export function chips(g: Game, { t, lang }: Ctx) {
   return [
     { k: t.kPlayers, v: g.players[lang], dot: null as string | null },
     { k: t.kPlatform, v: g.platform[lang], dot: null },
-    { k: t.kStatus, v: live ? t.live : t.dev, dot: live ? LIVE_DOT : DEV_DOT }
+    { k: t.kStatus, v: live ? t.live : t.dev, dot: live ? LIVE_DOT : DEV_DOT },
+    { k: t.kPrice, v: t.free, dot: null }
   ];
 }
 

@@ -37,19 +37,19 @@ export interface Game {
 export const GAMES: Game[] = [
   {
     id: 'zvh', title: 'Zombies vs Humans', status: 'live', action: 'play',
-    url: 'https://zombies-vs-humans-3da9c6e58c4e.herokuapp.com/', urlLabel: 'zombies-vs-humans.herokuapp.com',
+    url: 'https://zombies-vs-humans.com/', urlLabel: 'zombies-vs-humans.com',
     featured: true,
     tags: ['strategy', 'multiplayer', 'web'],
     colors: { a: '#7CFF4F', b: '#FF3B3B', ink: '#2E7D17' },
     cover: 'games/zvh/cover.webp', coverTall: 'games/zvh/cover-tall.webp', trailer: 'games/zvh/trailer.mp4',
     shots: ['games/zvh/shot-1.webp', 'games/zvh/shot-2.webp', 'games/zvh/shot-3.webp'],
-    genre: { es: 'Estrategia', en: 'Strategy' },
-    hook: { es: 'Estrategia por rondas en un mapa del mundo: zombis contra humanos.', en: 'Round-based strategy on a world map: zombies against humans.' },
+    genre: { es: 'Estrategia por turnos', en: 'Turn-based strategy' },
+    hook: { es: 'Horda zombi o resistencia humana: elige bando y conquista el mundo.', en: 'Zombie horde or human resistance: pick a side and conquer the world.' },
     desc: {
-      es: 'Dos equipos se mueven por un mapa en cuadrícula. En cada ronda, las órdenes de todos se resuelven a la vez. Se juega contra otras personas o contra bots.',
-      en: 'Two teams move across a grid map. Each round, everyone\'s orders resolve at the same time. Play against other people or against bots.'
+      es: 'Levanta ciudades, forma tu ejército y conquista las del rival.',
+      en: 'Build cities, raise an army and take your rivals\' cities.'
     },
-    players: { es: 'Online · bots', en: 'Online · bots' },
+    players: { es: 'Online con amigos', en: 'Online with friends' },
     platform: { es: 'Web', en: 'Web' },
     alt: { es: 'Vista aérea nocturna de una ciudad fortificada circular, con sus campos y su torre central iluminados por antorchas, mientras dos tanques y una horda de zombis de ojos rojos irrumpen por una brecha en llamas en la muralla.', en: 'Night aerial view of a circular walled city, its fields and central tower lit by torches, as two tanks and a horde of red-eyed zombies pour through a burning breach in the wall.' }
   },
@@ -62,12 +62,12 @@ export const GAMES: Game[] = [
     cover: 'games/corrillo/cover.webp', coverTall: 'games/corrillo/cover-tall.webp', trailer: null,
     shots: ['games/corrillo/shot-1.webp', 'games/corrillo/shot-2.webp', 'games/corrillo/shot-3.webp'],
     genre: { es: 'Juegos de fiesta', en: 'Party games' },
-    hook: { es: 'Juegos de fiesta para jugar en grupo, cada uno con su móvil.', en: 'Party games for a group, each player on their own phone.' },
+    hook: { es: '¿A qué jugáis esta noche? Cada uno con su móvil, todos al corrillo.', en: 'Game night, sorted. Everyone just grabs their phone.' },
     desc: {
-      es: 'Siete juegos en una web: El Lobo, Impostor, Team Builder, Termómetro, La Ruleta, Verdad o Mentira y El Canciller Secreto. Una persona crea la sala y las demás entran con el código.',
-      en: 'Seven games on one website: El Lobo, Impostor, Team Builder, Termómetro, La Ruleta, Verdad o Mentira and El Canciller Secreto. One person creates a room and the others join with its code.'
+      es: 'Desenmascara al lobo, pilla al impostor o ficha a tu equipo: siete juegos de faroles, piques y risas. Crea una sala, pasa el código y a jugar, sin registrarte.',
+      en: 'Unmask the werewolf, catch the impostor or draft your dream team: seven games of bluffing, banter and laughs. Open a room, share the code and you\'re in, no sign-up needed.'
     },
-    players: { es: '3+ · misma sala', en: '3+ · same room' },
+    players: { es: '2+', en: '2+' },
     platform: { es: 'Web · móviles', en: 'Web · phones' },
     alt: { es: 'Tres móviles sobre una mesa de fiesta con palomitas, pizza y luces, mostrando la carta secreta de "Hombre lobo", la votación con avatares y el sello "¡Vendido!" de Team Builder, con un brillo magenta y naranja.', en: 'Three phones lying on a late-night party table with popcorn, pizza and fairy lights, showing the secret "Hombre lobo" role card, the avatar vote grid and Team Builder\'s "¡Vendido!" stamp, lit in magenta and orange.' }
   },
@@ -75,18 +75,18 @@ export const GAMES: Game[] = [
     id: 'supermanager', title: 'SuperManager', status: 'live', action: 'play',
     url: 'https://supermanager-dda56a05caff.herokuapp.com/', urlLabel: 'supermanager.herokuapp.com',
     featured: false,
-    tags: ['strategy', 'multiplayer', 'web'],
+    tags: ['strategy', 'multiplayer', 'web', 'mobile'],
     colors: { a: '#FFD23F', b: '#2FBF71', ink: '#7D6000' },
     cover: 'games/supermanager/cover.webp', coverTall: 'games/supermanager/cover-tall.webp', trailer: null,
     shots: ['games/supermanager/shot-1.webp', 'games/supermanager/shot-2.webp', 'games/supermanager/shot-3.webp'],
     genre: { es: 'Liga fantasy', en: 'Fantasy league' },
-    hook: { es: 'Liga fantasy con subastas en directo.', en: 'A fantasy league with live auctions.' },
+    hook: { es: 'Puja contra tus amigos en directo y llévate la liga.', en: 'Outbid your friends live and take the league.' },
     desc: {
-      es: 'Crea una liga con tus amigos, puja por jugadores y suma puntos con lo que hacen en cada partido real.',
-      en: 'Create a league with your friends, bid for players and score points from what they do in each real match.'
+      es: 'Monta una liga de lo que quieras: fútbol, F1 o tu serie favorita. Pelea cada carta en subastas en directo y suma puntos con lo que pasa de verdad.',
+      en: 'Start a league about anything: football, F1 or your favourite show. Fight for every card in live auctions and score from what really happens.'
     },
-    players: { es: 'Ligas con amigos', en: 'Leagues with friends' },
-    platform: { es: 'Web', en: 'Web' },
+    players: { es: 'Con amigos · online', en: 'With friends · online' },
+    platform: { es: 'Web · móviles', en: 'Web · phones' },
     alt: { es: 'Tres cartas de jugador en abanico sobre un campo de fútbol oscuro, con el temporizador de una subasta, la mejor puja y el ranking de la liga.', en: 'Three player cards fanned over a dark football pitch, with an auction timer, the best bid and the league ranking.' }
   },
   {
@@ -98,13 +98,13 @@ export const GAMES: Game[] = [
     cover: 'games/geomites/cover.webp', coverTall: 'games/geomites/cover-tall.webp', trailer: 'games/geomites/trailer.mp4',
     shots: ['games/geomites/shot-1.webp', 'games/geomites/shot-2.webp', 'games/geomites/shot-3.webp'],
     credit: { es: 'En colaboración con BISPEEL', en: 'In collaboration with BISPEEL' },
-    genre: { es: 'Coleccionables', en: 'Creature collecting' },
-    hook: { es: 'Colecciona criaturas y combate con ellas.', en: 'Collect creatures and battle with them.' },
+    genre: { es: 'Criaturas coleccionables', en: 'Creature collecting' },
+    hook: { es: 'Hazte con las criaturas más raras y forma un equipo imbatible.', en: 'Hunt down the rarest creatures and build an unbeatable team.' },
     desc: {
-      es: 'Juego para Android e iOS. Cada geomite tiene clase, elemento y rareza. Explora zonas y forma tu equipo para los combates automáticos.',
-      en: 'A game for Android and iOS. Each geomite has a class, an element and a rarity. Explore zones and build your team for the automatic battles.'
+      es: 'Explora cada zona en busca de nuevos geomites. Combina clases, elementos y rarezas, y lánzate a combates intensos y feroces.',
+      en: 'Explore each zone in search of new geomites. Mix classes, elements and rarities, and throw yourself into fierce, intense battles.'
     },
-    players: { es: '1 jugador + online', en: 'Single player + online' },
+    players: { es: 'En solitario u online', en: 'Solo or online' },
     platform: { es: 'Android · iOS', en: 'Android · iOS' },
     alt: { es: 'Tres cartas de geomites en abanico sobre una cueva oscura: delante un dragón negro con marco dorado, detrás un kraken y una criatura de materia oscura, con la mascota Fluffy a la izquierda.', en: 'Three geomite cards fanned over a dark cave: a black dragon in a gold frame in front, a kraken and a dark-matter creature behind, with the mascot Fluffy on the left.' }
   },
@@ -116,13 +116,13 @@ export const GAMES: Game[] = [
     colors: { a: '#3D9BFF', b: '#A66BFF', ink: '#1F5FD1' },
     cover: 'games/pillapilla/cover.webp', coverTall: 'games/pillapilla/cover-tall.webp', trailer: null,
     shots: ['games/pillapilla/shot-1.webp'],
-    genre: { es: 'Multijugador asimétrico', en: 'Asymmetric multiplayer' },
-    hook: { es: 'Uno persigue y los demás huyen.', en: 'One player chases, the others run.' },
+    genre: { es: 'Persecución asimétrica', en: 'Asymmetric chase' },
+    hook: { es: 'Uno caza, los demás huyen. Que no te vea.', en: 'One hunts, the rest run. Stay out of sight.' },
     desc: {
-      es: 'Multijugador por turnos en un mapa con muros. El cazador solo ve lo que tiene delante. Cada personaje tiene sus propias habilidades.',
-      en: 'Turn-based multiplayer on a map with walls. The catcher only sees what is in front of it. Each character has its own abilities.'
+      es: 'El cazador solo ve lo que tiene delante: usa los muros para salir de su vista. Por turnos, cada paso cuenta, y cada personaje tiene sus propias habilidades.',
+      en: 'The hunter only sees what\'s in front of it: use the walls to slip out of sight. It\'s turn-based, so every move counts, and every character has abilities of its own.'
     },
-    players: { es: '1 contra varios · online', en: '1 vs many · online' },
+    players: { es: '1 contra todos · online', en: '1 vs all · online' },
     platform: { es: 'Web · escritorio', en: 'Web · desktop' },
     alt: { es: 'Un demonio con una antorcha recorre un laberinto de piedra de noche y su luz alcanza a una guerrera, mientras otros dos personajes se esconden entre los muros.', en: 'A demon with a torch walks a stone maze at night and its light reaches a warrior, while two other characters hide among the walls.' }
   }
