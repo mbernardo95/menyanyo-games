@@ -254,6 +254,7 @@ a { color: inherit; }
   margin: 0; font-family: var(--font-display); font-weight: 900; font-size: var(--fs-display-m);
   line-height: .92; text-transform: uppercase;
 }
+.credit { margin: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--muted); }
 .card-hook { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
 .chip {
   display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 10px;

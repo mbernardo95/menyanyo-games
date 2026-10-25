@@ -1,13 +1,13 @@
 import type { Game } from '../games';
 import { cover } from './cover';
 import { icon } from './icons';
-import { actionLabel, canPlay, statChips, type Ctx } from './shared';
+import { actionAria, actionIcon, actionLabel, canPlay, credit, statChips, type Ctx } from './shared';
 import { esc, gameVars } from '../util';
 
 export function overlay(g: Game, shot: number, ctx: Ctx): string {
   const { t, lang } = ctx;
   const action = canPlay(g)
-    ? `<a class="btn btn-lg btn-press" href="${esc(g.url!)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(t.playAria(g.title))}">${icon.play(20)}${esc(actionLabel(g, t))}</a>${g.urlLabel ? `<span class="ov-url">${esc(g.urlLabel)}</span>` : ''}`
+    ? `<a class="btn btn-lg btn-press" href="${esc(g.url!)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(actionAria(g, t))}">${actionIcon(g, 20)}${esc(actionLabel(g, t))}</a>${g.urlLabel ? `<span class="ov-url">${esc(g.urlLabel)}</span>` : ''}`
     : `<button type="button" class="btn-soon btn-lg" disabled>${esc(t.soon)}</button>`;
   return `<div class="ov" role="dialog" aria-modal="true" aria-labelledby="ov-title">
     <div class="ov-panel g-scope" style="${gameVars(g.colors)}">
@@ -20,7 +20,7 @@ export function overlay(g: Game, shot: number, ctx: Ctx): string {
           <button type="button" class="btn-ghost ghost" data-close>${icon.arrowLeft}${esc(t.back)}</button>
           <button type="button" class="btn-ghost ghost ov-close" data-close data-autofocus aria-label="${esc(t.closeAria)}"><span class="esc-k">ESC</span>${icon.close}</button>
         </div>
-        <div class="ov-titles"><span class="genre genre-lg">${esc(g.genre[lang])}</span><h2 id="ov-title" class="ov-title">${esc(g.title)}</h2></div>
+        <div class="ov-titles"><span class="genre genre-lg">${esc(g.genre[lang])}</span><h2 id="ov-title" class="ov-title">${esc(g.title)}</h2>${credit(g, lang)}</div>
         <div class="chip-row">${statChips(g, ctx, 'stat-chip')}</div>
         <p class="ov-desc">${esc(g.desc[lang])}</p>
         <div class="ov-actions">${action}</div>

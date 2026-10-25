@@ -1,7 +1,7 @@
 import { GAMES, type Game, type Tag } from '../games';
 import { cover } from './cover';
 import { icon } from './icons';
-import { actionLabel, canPlay, chips, type Ctx } from './shared';
+import { actionAria, actionIcon, actionLabel, canPlay, chips, credit, type Ctx } from './shared';
 import { esc, gameVars } from '../util';
 
 export type Filter = 'all' | Tag;
@@ -9,11 +9,10 @@ export const FILTERS: Filter[] = ['all', 'party', 'strategy', 'multiplayer', 'mo
 
 export function library(ctx: Ctx, filter: Filter): string {
   const { t } = ctx;
-  const live = GAMES.filter((g) => g.status === 'live').length;
   return `<section id="games" class="wrap sec" aria-labelledby="lib-title">
     <div class="sec-head">
       <h2 id="lib-title" class="h2">${esc(t.libTitle)}</h2>
-      <p class="count">${esc(t.count(GAMES.length, live))}</p>
+      <p class="count">${esc(t.count(GAMES.length))}</p>
     </div>
     <div class="filters scroll" role="group" aria-label="${esc(t.filterAria)}">${filterChips(ctx, filter)}</div>
     <div class="grid">${grid(ctx, filter)}</div>
@@ -38,7 +37,7 @@ export function card(g: Game, ctx: Ctx): string {
   const brackets = ['tl', 'tr', 'bl', 'br'].map((c) => `<span class="brk ${c}" aria-hidden="true"></span>`).join('');
   const chipHtml = chips(g, ctx).map((c) => `<span class="chip">${c.dot ? `<span class="dot" aria-hidden="true" style="--dot:${c.dot}"></span>` : ''}<span class="sr-only">${esc(c.k)}:</span>${esc(c.v)}</span>`).join('');
   const action = canPlay(g)
-    ? `<a class="btn btn-press" href="${esc(g.url!)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(t.playAria(g.title))}">${icon.play(16)}${esc(actionLabel(g, t))}</a>`
+    ? `<a class="btn btn-press" href="${esc(g.url!)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(actionAria(g, t))}">${actionIcon(g, 16)}${esc(actionLabel(g, t))}</a>`
     : `<button type="button" class="btn-soon" disabled>${esc(t.soon)}</button>`;
   return `<article class="card g-scope" data-game="${g.id}" style="${gameVars(g.colors)}">
     ${brackets}
@@ -49,6 +48,7 @@ export function card(g: Game, ctx: Ctx): string {
     <div class="card-body">
       <span class="genre">${esc(g.genre[lang])}</span>
       <h3 class="card-title">${esc(g.title)}</h3>
+      ${credit(g, lang)}
       <p class="card-hook">${esc(g.hook[lang])}</p>
       <div class="chip-row">${chipHtml}</div>
       <div class="card-actions">${action}<button type="button" class="btn-ghost ghost" data-open="${g.id}" data-key="details-${g.id}" aria-label="${esc(t.detailsAria(g.title))}">${esc(t.details)}${icon.arrowRight}</button></div>
