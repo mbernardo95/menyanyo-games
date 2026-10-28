@@ -6,18 +6,20 @@ import { esc } from '../util';
 
 /* The frame stays mounted for the whole visit so the drift and parallax can transition;
    only the art, the slide and the dots are swapped. */
-export function heroFrame({ t }: Ctx): string {
+/* `first` (the featured list) pre-fills the art, slide and dots for the static (prerendered) page; in the browser main.ts fills them. */
+export function heroFrame(ctx: Ctx, first?: Game[]): string {
+  const { t } = ctx;
   const corners = ['tl', 'tr', 'bl', 'br'].map((c) => `<span class="hud ${c}" aria-hidden="true"></span>`).join('');
   return `<section id="featured" class="wrap hero-sec" aria-roledescription="carousel" aria-label="${esc(t.featured)}">
     <div class="hero">
-      <div class="hero-drift"><div class="hero-parallax"><div class="hero-art"></div></div></div>
+      <div class="hero-drift"><div class="hero-parallax"><div class="hero-art">${first ? heroArt(first[0], ctx) : ''}</div></div></div>
       <div class="hero-scrim" aria-hidden="true"></div>
-      <div class="hero-ph"></div>
+      <div class="hero-ph">${first ? heroTag(first[0], ctx) : ''}</div>
       ${corners}
-      <div class="hero-slide" role="group" aria-roledescription="slide"></div>
+      <div class="hero-slide" role="group" aria-roledescription="slide">${first ? heroSlide(first[0], 0, first.length, ctx) : ''}</div>
       <div class="hero-controls">
         <button type="button" class="round-btn glass" data-hero="prev" data-key="hero-prev" aria-label="${esc(t.prev)}">${icon.prev}</button>
-        <div class="dots"></div>
+        <div class="dots">${first ? heroDots(first, 0, ctx) : ''}</div>
         <button type="button" class="round-btn glass" data-hero="next" data-key="hero-next" aria-label="${esc(t.next)}">${icon.next}</button>
       </div>
     </div>
