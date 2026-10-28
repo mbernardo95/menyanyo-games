@@ -18,6 +18,14 @@ Pages at https://menyanyo-games.es (`public/CNAME`). The DNS is at Hostinger: fo
 `@` to GitHub Pages (185.199.108.153, .109.153, .110.153, .111.153) and a `CNAME` `www` →
 `mbernardo95.github.io`.
 
+## SEO
+
+`npm run build` prerenders the Spanish page into `dist/index.html` (plugin in `vite.config.ts`,
+markup from `src/prerender.ts` → `src/page.ts`) and adds JSON-LD for the studio and its games, so
+crawlers read the content without running JavaScript. `public/robots.txt` and `public/sitemap.xml`
+point search engines at the one URL. Register the domain in Google Search Console and submit the
+sitemap there.
+
 ## Add a game
 
 Add one entry to `GAMES` in [`src/games.ts`](src/games.ts). The hero carousel (`featured` and

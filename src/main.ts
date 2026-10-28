@@ -3,12 +3,11 @@ import './styles.css';
 import { GAMES, type Game, type Lang } from './games';
 import { T } from './i18n';
 import { setPlaying } from './components/cover';
-import { footer } from './components/footer';
-import { heroArt, heroDots, heroFrame, heroSlide, heroTag } from './components/hero';
-import { filterChips, grid, library, type Filter } from './components/library';
+import { heroArt, heroDots, heroSlide, heroTag } from './components/hero';
+import { filterChips, grid, type Filter } from './components/library';
 import { media, overlay, thumbs } from './components/overlay';
 import type { Ctx } from './components/shared';
-import { topBar } from './components/topbar';
+import { page } from './page';
 
 type Theme = 'dark' | 'light';
 
@@ -70,11 +69,7 @@ function renderAll(): void {
   document.documentElement.dataset.theme = state.theme;
   document.title = c.t.docTitle;
   keepFocus(() => {
-    app.innerHTML = `<a class="skip" href="#games">${c.t.skip}</a>
-      <h1 class="sr-only">${c.t.h1}</h1>
-      ${topBar(c, state.theme)}
-      <main id="main">${heroFrame(c)}${library(c, state.filter)}</main>
-      ${footer(c)}`;
+    app.innerHTML = page(c, state.theme, state.filter);
     renderHero(false);
   });
   bindHero();
