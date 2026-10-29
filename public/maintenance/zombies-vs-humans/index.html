@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zombies vs Humans · Back soon</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0b; --surface: #0e1110; --line: rgba(226,232,220,.14);
+    --text: #e4e9e1; --muted: #a3aea4; --dim: #889690;
+    --human: #5ce07b; --human-ink: #0a1a0f; --zombie: #e2564b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Chakra Petch", system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(92,224,123,.08), transparent 45%),
+      radial-gradient(circle at 80% 85%, rgba(226,86,75,.08), transparent 45%);
+  }
+  main {
+    width: 100%; max-width: 520px; text-align: center;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 36px 24px;
+  }
+  .sides { font-size: 44px; letter-spacing: 6px; margin-bottom: 8px; }
+  .brand {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--dim);
+  }
+  .brand .h { color: var(--human); } .brand .z { color: var(--zombie); }
+  h1 { font-size: 28px; margin: 18px 0 10px; font-weight: 700; }
+  p { color: var(--muted); line-height: 1.55; margin: 0 0 22px; }
+  a.btn {
+    display: inline-block; background: var(--human); color: var(--human-ink);
+    font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 6px;
+    letter-spacing: .06em; text-transform: uppercase; font-size: 14px;
+  }
+  a.btn:hover { filter: brightness(1.1); }
+  .support {
+    margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line);
+  }
+  .support p { margin-bottom: 16px; font-size: 15px; }
+  a.coffee {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid #e8a33d; color: #f0d3a3; text-decoration: none;
+    padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 14px;
+  }
+  a.coffee:hover { background: rgba(232,163,61,.14); }
+  a.coffee svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .note { margin-top: 20px; font-size: 13px; color: var(--dim); margin-bottom: 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="sides" aria-hidden="true">🧟 ⚔️ 🪖</div>
+  <div class="brand"><span class="z">Zombies</span> vs <span class="h">Humans</span></div>
+  <h1 data-en="The war is on pause" data-es="La guerra está en pausa">The war is on pause</h1>
+  <p data-en="Our servers are taking a short break. Your games, cities and armies are safe, and everything picks up exactly where you left it."
+     data-es="Nuestros servidores se están tomando un descanso. Tus partidas, ciudades y ejércitos están a salvo, y todo sigue exactamente donde lo dejaste.">Our servers are taking a short break. Your games, cities and armies are safe, and everything picks up exactly where you left it.</p>
+  <a class="btn" href="https://zombies-vs-humans.com/" target="_top" data-en="Try again" data-es="Reintentar">Try again</a>
+  <div class="support">
+    <p data-en="Zombies vs Humans is free to play, made by one person, and the servers are paid out of pocket. If you enjoy it, a coffee helps keep the war running."
+       data-es="Zombies vs Humans es gratis, lo hace una sola persona y los servidores salen de su bolsillo. Si te gusta, un café ayuda a que la guerra siga en marcha.">Zombies vs Humans is free to play, made by one person, and the servers are paid out of pocket. If you enjoy it, a coffee helps keep the war running.</p>
+    <a class="coffee" href="https://buymeacoffee.com/menyanyo" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"></path></svg><span data-en="Buy me a coffee" data-es="Invítame a un café">Buy me a coffee</span></a>
+  </div>
+  <p class="note" data-en="Back soon. Thanks for your patience, commander."
+     data-es="Volvemos pronto. Gracias por tu paciencia, comandante.">Back soon. Thanks for your patience, commander.</p>
+</main>
+<script>
+  (function () {
+    var langs = navigator.languages || [navigator.language || "en"];
+    var es = String(langs[0] || "").toLowerCase().indexOf("es") === 0;
+    if (!es) return;
+    document.documentElement.lang = "es";
+    document.title = "Zombies vs Humans · Volvemos pronto";
+    var els = document.querySelectorAll("[data-es]");
+    for (var i = 0; i < els.length; i++) els[i].textContent = els[i].getAttribute("data-es");
+  })();
+</script>
+</body>
+</html>
