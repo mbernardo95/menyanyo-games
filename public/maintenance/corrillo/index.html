@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corrillo · Volvemos pronto</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0e15; --surface: #171925; --line: #2d3146;
+    --text: #f3f1ea; --muted: #a8abc1;
+    --pink: #ff3da8; --orange: #ff7a2e; --ink: #15161e;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh;
+    background: var(--bg); color: var(--text);
+    font-family: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(255,61,168,.16), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(255,122,46,.14), transparent 45%);
+  }
+  main {
+    width: 100%; max-width: 500px; text-align: center;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 20px; padding: 36px 24px;
+  }
+  .emoji { font-size: 44px; letter-spacing: 6px; margin-bottom: 6px; }
+  .brand {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 800;
+    font-size: 22px; letter-spacing: -.01em;
+    background: linear-gradient(90deg, var(--pink), var(--orange));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-size: 30px; line-height: 1.15; margin: 16px 0 10px; font-weight: 800;
+  }
+  p { color: var(--muted); line-height: 1.55; margin: 0 0 22px; }
+  a.btn {
+    display: inline-block; color: var(--ink); text-decoration: none;
+    background: linear-gradient(90deg, var(--pink), var(--orange));
+    font-weight: 700; padding: 12px 24px; border-radius: 999px; font-size: 16px;
+  }
+  a.btn:hover { filter: brightness(1.08); }
+  .support { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .support p { margin-bottom: 16px; font-size: 15px; }
+  a.coffee {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--orange); color: var(--text); text-decoration: none;
+    padding: 9px 18px; border-radius: 999px; font-weight: 700; font-size: 15px;
+  }
+  a.coffee:hover { background: rgba(255,122,46,.14); }
+  a.coffee svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .note { margin-top: 20px; font-size: 13px; margin-bottom: 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="emoji" aria-hidden="true">🐺 🎭 🍻</div>
+  <div class="brand">Corrillo</div>
+  <h1 data-es="Estamos recogiendo la mesa" data-en="We're clearing the table">Estamos recogiendo la mesa</h1>
+  <p data-es="Los servidores se están tomando un respiro. En un rato volvemos con el lobo, el impostor y todos los demás."
+     data-en="Our servers are taking a breather. We'll be back shortly with the werewolf, the impostor and the rest of the gang.">Los servidores se están tomando un respiro. En un rato volvemos con el lobo, el impostor y todos los demás.</p>
+  <a class="btn" href="https://el-corrillo.com/" target="_top" data-es="Reintentar" data-en="Try again">Reintentar</a>
+  <div class="support">
+    <p data-es="Corrillo es gratis, lo hace una sola persona y los servidores salen de su bolsillo. Si os lo pasáis bien, un café ayuda a que la fiesta siga."
+       data-en="Corrillo is free, made by one person, and the servers are paid out of pocket. If you're having fun, a coffee helps keep the party going.">Corrillo es gratis, lo hace una sola persona y los servidores salen de su bolsillo. Si os lo pasáis bien, un café ayuda a que la fiesta siga.</p>
+    <a class="coffee" href="https://buymeacoffee.com/menyanyo" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"></path></svg><span data-es="Invítame a un café" data-en="Buy me a coffee">Invítame a un café</span></a>
+  </div>
+  <p class="note" data-es="Gracias por la paciencia. ¡Nos vemos en el corrillo!"
+     data-en="Thanks for your patience. See you in the circle!">Gracias por la paciencia. ¡Nos vemos en el corrillo!</p>
+</main>
+<script>
+  (function () {
+    var langs = navigator.languages || [navigator.language || "es"];
+    var first = String(langs[0] || "es").toLowerCase();
+    if (first.indexOf("es") === 0 || first.indexOf("ca") === 0) return;
+    document.documentElement.lang = "en";
+    document.title = "Corrillo · Back soon";
+    var els = document.querySelectorAll("[data-en]");
+    for (var i = 0; i < els.length; i++) els[i].textContent = els[i].getAttribute("data-en");
+  })();
+</script>
+</body>
+</html>
